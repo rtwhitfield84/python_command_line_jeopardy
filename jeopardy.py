@@ -6,6 +6,20 @@ def jeopardy():
 	r = requests.get('https://jeopartymode.firebaseio.com/{}.json'
 					.format(random_jeopardy_key))
 
-	print(r.json())
+	print("\n""********************** \n"  
+		"Command Line Jeopardy! \n" 
+		"**********************")
 
+	for k,v in r.json().items():
+		if str(k) == 'answer':
+			answer = v
+		if str(k) == 'question':
+			question = v
+		if str(k) == 'category':
+			category = v
+		if str(k) == 'value':
+			value = v
+		if str(k) == 'round':
+			j_round = v
+		print(k,v+'\n')
 jeopardy()
