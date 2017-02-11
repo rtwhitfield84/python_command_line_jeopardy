@@ -1,5 +1,9 @@
 import requests
 import random
+import parser
+
+
+
 
 def jeopardy():
 	random_jeopardy_key = random.randrange(9000,10000)
@@ -12,8 +16,9 @@ def jeopardy():
 
 	for k,v in r.json().items():
 		if str(k) == 'answer':
-			answer = v
+			answer = v.lower()
 		if str(k) == 'question':
+			parser.strip_tags(v)
 			question = v
 		if str(k) == 'category':
 			category = v
@@ -23,7 +28,7 @@ def jeopardy():
 			j_round = v
 		print(k,v+'\n')
 
-	user_answer = str(input('What is: '))
+	user_answer = str(input('What is: ')).lower()
 	if user_answer == answer:
 		print('correct')
 jeopardy()
