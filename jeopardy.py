@@ -22,4 +22,8 @@ def jeopardy():
 		if str(k) == 'round':
 			j_round = v
 		print(k,v+'\n')
+
+	user_answer = str(input('What is: '))
+	if user_answer == answer:
+		print('correct')
 jeopardy()
