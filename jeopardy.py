@@ -42,7 +42,7 @@ def jeopardy():
 		exit()
 	else:
 		os.system('clear')
-		print("incorrect")
+		print("incorrect \n" + "amswer was: " + answer + "\n")
 		jeopardy()
 
 if __name__ == '__main__':
