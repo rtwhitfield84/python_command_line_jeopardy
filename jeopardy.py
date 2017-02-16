@@ -14,21 +14,20 @@ def jeopardy():
 	print("\n""********************** \n"  
 		"Command Line Jeopardy! \n" 
 		"**********************")
-	print("Enter q to quit")
+	print("Enter q to quit \n")
 
 	for k,v in r.json().items():
 		if str(k) == 'answer':
 			answer = v.lower()
 		if str(k) == 'question':
-			question = v
-			parser.strip_tags(question)
+			question = parser.strip_tags(v)
 		if str(k) == 'category':
 			category = v
 		if str(k) == 'value':
 			value = v
 		if str(k) == 'round':
 			j_round = v
-			
+
 	print(j_round + '\n')
 	print('Category \n' + category + '\n')
 	print('Question \n' + question + '\n')
@@ -47,4 +46,5 @@ def jeopardy():
 		jeopardy()
 
 if __name__ == '__main__':
+	os.system('clear')
 	jeopardy()
